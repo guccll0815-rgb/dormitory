@@ -6,6 +6,25 @@
     <title>奇美醫療財團法人佳里奇美醫院宿舍簡介</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        /* 雙圖片容器樣式：實現圖片並排 */
+        .dual-image-container {
+            display: flex; /* 啟用 Flexbox 橫向排列 */
+            gap: 10px; /* 兩張圖片之間的間距 */
+            margin-bottom: 15px; /* 容器與下方標題的間距 */
+            /* 圖片需要保持在容器內，避免溢出 */
+            overflow: hidden; 
+        }
+        
+        /* 雙圖片容器內圖片的尺寸控制 */
+        .dual-image-container img {
+            width: 50%; /* 每張圖片剛好佔容器寬度的 50% */
+            height: 180px; /* 設定一個固定的高度，讓兩張圖片高度一致 */
+            object-fit: cover; /* 確保圖片填滿，可能會裁剪 */
+            border-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            /* 覆寫 .facility-item img 的 margin-bottom: 15px; */
+            margin-bottom: 0 !important; 
+        }
         /* 基礎樣式和響應式設計 */
         body {
             font-family: 'Noto Sans TC', 'Microsoft JhengHei', sans-serif;
@@ -276,25 +295,22 @@
             </section>
 
         <section id="facilities">
-            <h2>🏋️ 公共設施</h2>
-            <div class="facility-list">
-                <div class="facility-item">
-                    <img src="交誼廳照片.jpg" alt="交誼廳照片">
-                    <h3>交誼廳</h3>
-                    <p>設有沙發、電鍋及飲水機，提供同仁休憩與交流。</p>
-                </div>
-                <div class="facility-item">
-                    <img src="洗衣曬衣空間1.jpg" alt="洗衣機照片" style="margin-bottom: 0;">
-                    <img src="洗衣曬衣空間2.png" alt="曬衣空間照片" style="margin-bottom: 0;">
-                </div>
-                    <h3>🧺 洗衣/曬衣空間 (6樓)</h3>
-                    <p>位於 6 樓，設置 2 台洗衣機、1 台烘衣機、1 台脫水機：</p>
-                    <ul>
-                        <li>洗衣：優惠價 20 元/次 (原價 30 元)。</li>
-                        <li>烘衣：10 元/次。</li>
-                        <li>脫水：免費 (原價 5 元)。</li>
-                    </ul>
-                </div>
+    <h2>🏋️ 公共設施</h2>
+    <div class="facility-list">
+        <div class="facility-item">
+            <div class="dual-image-container">
+                <img src="洗衣曬衣空間1.jpg" alt="洗衣機照片">
+                <img src="洗衣曬衣空間2.png" alt="曬衣空間照片">
+            </div>
+            
+            <h3>🧺 洗衣/曬衣空間 (6樓)</h3>
+            <p>位於 6 樓，設置 2 台洗衣機、1 台烘衣機、1 台脫水機：</p>
+            <ul>
+                <li>洗衣：優惠價 20 元/次 (原價 30 元)。</li>
+                <li>烘衣：10 元/次。</li>
+                <li>脫水：免費 (原價 5 元)。</li>
+            </ul>
+        </div>
             </div>
 
             <div style="margin-top: 30px;">
