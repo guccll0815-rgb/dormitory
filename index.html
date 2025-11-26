@@ -1,1 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>佳里奇美醫院宿舍簡介</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* 基礎樣式和響應式設計 */
+        body {
+            font-family: 'Noto Sans TC', 'Microsoft JhengHei', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f4f8; /* 柔和背景色 */
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        /* 網頁頂部標題區 */
+        header {
+            background-color: #004d99; /* 奇美醫院主色調-深藍 */
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.8em;
+            letter-spacing: 2px;
+        }
+        /* 導覽列 */
+        nav {
+            background-color: #007bff; /* 輔助色-中藍 */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        nav ul li a {
+            display: block;
+            padding: 15px 20px;
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+        nav ul li a:hover {
+            background-color: #0056b3;
+        }
+        /* 內容區塊 */
+        section {
+            background-color: white;
+            padding: 40px;
+            margin-top: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+        section h2 {
+            color: #004d99;
+            border-bottom: 3px solid #007bff;
+            padding-bottom: 12px;
+            margin-bottom: 30px;
+            font-size: 2.2em;
+            font-weight: 700;
+        }
+        /* 表格樣式 */
+        .price-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+        .price-table th, .price-table td {
+            border: 1px solid #ddd;
+            padding: 12px 15px;
+            text-align: center;
+        }
+        .price-table th {
+            background-color: #e9ecef;
+            color: #333;
+            font-weight: 700;
+        }
+        .price-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .price-table td strong {
+            color: #d9534f; /* 突出價格 */
+        }
 
+        /* 設施/圖片列表佈局 */
+        .facility-list {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .facility-item {
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #fcfcfc;
+            text-align: center;
+        }
+        .facility-item h3 {
+            color: #007bff;
+            margin-top: 0;
+            font-size: 1.5em;
+        }
+        /* 圖片樣式 */
+        .facility-item img {
+            width: 100%;
+            height: auto;
+            max-height: 250px; /* 限制高度，保持視覺一致 */
+            object-fit: cover; /* 確保圖片覆蓋容器 */
+            border-radius: 4px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* 頁腳 */
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+            background-color: #333;
+            color: white;
+            font-size: 0.9em;
+        }
+
+        /* 手機版適應 */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+            nav ul li a {
+                padding: 10px 10px;
+            }
+            section {
+                padding: 20px 15px;
+            }
+            .price-table th, .price-table td {
+                padding: 8px;
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>佳里奇美醫院 - 宿舍簡介</h1>
+        <p>提供給同仁舒適、便利的住宿環境</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#location">位置及概況</a></li>
+            <li><a href="#pricing">房型與收費</a></li>
+            <li><a href="#room_images">房型實景</a></li>
+            <li><a href="#facilities">公共設施</a></li>
+            <li><a href="#security">安全與門禁</a></li>
+            <li><a href="#plans">樓層平面圖</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        
+        <section id="location">
+            <h2>🏠 宿舍位置及概況</h2>
+            <p><strong>地址：</strong> 722 台南市佳里區公園路82號</p>
+            <p>宿舍鄰近佳里奇美醫院，交通路線便利，提供同仁舒適的休憩環境。</p>
+            
+            <div class="facility-list">
+                <div class="facility-item">
+                    <img src="uploaded:宿舍外觀照片.png-2722c9d5-948c-4b12-bdc7-3d7d6acf764c" alt="宿舍外觀照片">
+                    <h3>宿舍外觀</h3>
+                    <p>現代化建築設計，提供安全舒適的生活空間。</p>
+                </div>
+                <div class="facility-item">
+                    <img src="uploaded:地理位置圖片.png-e58f0668-e40a-4b56-833b-023e0ef06378" alt="宿舍地理位置圖">
+                    <h3>地理位置</h3>
+                    <p>距離醫院及主要生活機能區交通便利，例如距離忠孝路線里約 3.8 公里 (12 分鐘車程)。</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="pricing">
+            <h2>💰 宿舍套房收費標準</h2>
+            <table class="price-table">
+                <thead>
+                    <tr>
+                        <th>房間形式</th>
+                        <th>收費標準 (元/月/人)</th>
+                        <th>備註</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>單人房</td>
+                        <td><strong>3,000</strong></td>
+                        <td>共 12 間 (3F/4F/5F 各 4 間)</td>
+                    </tr>
+                    <tr>
+                        <td>雙人房</td>
+                        <td><strong>1,500</strong></td>
+                        <td>共 8 間 (3F: 301-308)</td>
+                    </tr>
+                    <tr>
+                        <td>大雙人房</td>
+                        <td><strong>2,400</strong></td>
+                        <td>共 20 間 (4F/5F)</td>
+                    </tr>
+                    <tr>
+                        <td>三人房</td>
+                        <td><strong>1,600</strong></td>
+                        <td>共 10 間 (3F/5F)</td>
+                    </tr>
+                    <tr>
+                        <td>四人房</td>
+                        <td><strong>1,200</strong></td>
+                        <td>共 7 間 (4F: 413-419)</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>費用說明：</h3>
+            <ul>
+                <li><strong>住宿費包含：</strong> 水費、公用電費、網路費等。</li>
+                <li><strong>冷氣電費：</strong> 採使用者付費方式，每度電價**5元**。</li>
+                <li><strong>冷氣使用：</strong> 須填寫「冷氣儲值電卡申請表」辦理冷氣儲值電卡使用。</li>
+            </ul>
+        </section>
+
+        <section id="room_images">
+            <h2>🖼️ 房型實景照片</h2>
+            <p>以下為部分房型之實景參考照片：</p>
+            <div class="facility-list">
+                
+                <div class="facility-item">
+                    <img src="placeholder:單人/雙人房照片1.jpg" alt="單人房內部照片">
+                    <h3>單人房 / 雙人房</h3>
+                    <p>房內配置獨立衛浴、床鋪、書桌椅、衣櫃及冰箱。</p>
+                </div>
+
+                <div class="facility-item">
+                    <img src="uploaded:三人房照片1.jpg-66dd3f7a-730b-4c3f-8e83-76b707f7ab7c" alt="三人房內部照片">
+                    <h3>三人房實景 (實景 1)</h3>
+                    <p>提供三個獨立床位，適合多人合住。</p>
+                </div>
+                
+                <div class="facility-item">
+                    <img src="uploaded:四人房照片1.jpg-e09af0b8-08d1-4987-8d98-f5e36e8f59b7" alt="四人房內部照片">
+                    <h3>四人房實景 (實景 1)</h3>
+                    <p>提供四個獨立床位，空間寬敞，配置齊全。</p>
+                </div>
+
+                <div class="facility-item">
+                    <img src="uploaded:三人房照片2.jpg-655812db-52de-4f96-8851-dd79c006c523" alt="三人房內部照片2">
+                    <h3>三人房實景 (實景 2)</h3>
+                </div>
+
+            </div>
+            </section>
+
+        <section id="facilities">
+            <h2>🏋️ 公共設施</h2>
+            <div class="facility-list">
+                <div class="facility-item">
+                    <img src="uploaded:交誼廳照片.jpg-7d820a8b-461e-4ec6-bd36-9364e1f275ab" alt="交誼廳照片">
+                    <h3>交誼廳</h3>
+                    <p>設有沙發、電鍋及飲水機，提供同仁休憩與交流。</p>
+                </div>
+                <div class="facility-item">
+                    <img src="placeholder:洗衣區照片.jpg" alt="洗衣區照片">
+                    <h3>🧺 洗衣/曬衣空間 (6樓)</h3>
+                    <p>位於 6 樓，設置 2 台洗衣機、1 台烘衣機、1 台脫水機：</p>
+                    <ul>
+                        <li>洗衣：優惠價 20 元/次 (原價 30 元)。</li>
+                        <li>烘衣：10 元/次。</li>
+                        <li>脫水：免費 (原價 5 元)。</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="margin-top: 30px;">
+                <h3>🅿️ 停車格 (地下室 B1)</h3>
+                <p>地下室提供停車位，收費標準如下：</p>
+                <ul>
+                    <li><strong>汽車停車格：</strong> 16 格，收費 **600 元/車/月**。</li>
+                    <li><strong>機車停車格：</strong> 48 格，**不收費**。</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="security">
+            <h2>🛡️ 門禁與安全</h2>
+            <div class="facility-list">
+                <div class="facility-item" style="grid-column: span 2;">
+                    <img src="placeholder:門禁刷卡機或監視畫面照片.jpg" alt="門禁系統照片" style="height: 150px; object-fit: contain; border: 1px dashed #aaa; background-color: #f1f1f1;">
+                    <h3>24 小時安全維護</h3>
+                    <p>宿舍配置完整的**監視設備、門禁刷卡系統**，並有**24 小時保全駐點**，嚴格控管人員進出，確保住宿安全。</p>
+                    <p>所有門禁刷卡機制均設置於各樓層主要門口，監視及門禁系統主機放置於 1F 電器機房控管。</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="plans">
+            <h2>🗺️ 樓層平面圖下載</h2>
+            <p>點擊下方連結可下載各樓層平面圖 (PDF 格式)：</p>
+            <div class="facility-list">
+                <div class="facility-item"><a href="uploaded:B1F.pdf" target="_blank" style="color: #004d99; font-weight: bold;">B1F 地下室平面圖 (停車場)</a></div>
+                <div class="facility-item"><a href="uploaded:1F.pdf" target="_blank" style="color: #004d99; font-weight: bold;">1F 平面圖</a></div>
+                <div class="facility-item"><a href="uploaded:2F.pdf" target="_blank" style="color: #004d99; font-weight: bold;">2F 平面圖 (交誼廳、設施區)</a></div>
+                <div class="facility-item"><a href="uploaded:3F.pdf" target="_blank" style="color: #004d99; font-weight: bold;">3F 樓層平面圖</a></div>
+                <div class="facility-item"><a href="uploaded:4F.pdf" target="_blank" style="color: #004d99; font-weight: bold;">4F 樓層平面圖</a></div>
+                <div class="facility-item"><a href="uploaded:5F.pdf" target="_blank" style="color: #004d99; font-weight: bold;">5F 樓層平面圖</a></div>
+                <div class="facility-item"><a href="uploaded:6F.pdf" target="_blank" style="color: #004d99; font-weight: bold;">6F 屋頂平台/洗衣區</a></div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>奇美醫療財團法人佳里奇美醫院 總務室 | 簡介製作日期：114.11.25</p>
+    </footer>
+
+</body>
+</html>
