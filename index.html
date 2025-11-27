@@ -1,25 +1,17 @@
+
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>奇美醫療財團法人佳里奇美醫院宿舍簡介</title>
+    <title>宿舍簡介</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* 雙圖片容器樣式：實現圖片並排 */
-        .dual-image-container {
-            display: flex; /* 啟用 Flexbox 橫向排列 */
-            gap: 10px; /* 兩張圖片之間的間距 */
-            margin-bottom: 15px; /* 容器與下方標題的間距 */
-            /* 圖片需要保持在容器內，避免溢出 */
-            overflow: hidden; 
-        }
-        
-        /* 雙圖片容器內圖片的尺寸控制 */
+         /* 雙圖片容器內圖片的尺寸控制 */
         .dual-image-container img {
-            width: auto; /* 每張圖片剛好佔容器寬度的 50% */
-            height: auto; /* 設定一個固定的高度，讓兩張圖片高度一致 */
-            object-fit: cover; /* 確保圖片填滿，可能會裁剪 */
+            width: 50%; /* 每張圖片剛好佔容器寬度的 50% */
+            height: 50%; /* 設定一個固定的高度，讓兩張圖片高度一致 */
+            object-fit: 90%; /* 確保圖片填滿，可能會裁剪 */
             border-radius: 4px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             /* 覆寫 .facility-item img 的 margin-bottom: 15px; */
@@ -35,22 +27,66 @@
             color: #333;
         }
         .container {
-            max-width: 1200px;
+            max-width: 900px;
             margin: 0 auto;
             padding: 20px;
         }
+       /* 標頭內容容器，用於控制標誌和標題的排列 */
+        .header-content {
+            display: flex; /* 使用 Flexbox 讓內容並排 */
+            align-items: center; /* 垂直居中對齊 */
+            justify-content: center; /* 水平居中 */
+            gap: 15px; /* 標誌和標題之間的間距 */
+            margin-bottom: 10px; /* 標誌/標題與下方描述文字的間距 */
+        }
+
+        /* 醫院標誌樣式 */
+        .hospital-logo {
+            position: absolute; /* 🎯 絕對定位：將 Logo 獨立出來 */           
+            left: 20px; /* 🎯 距離左邊緣 20px (靠左對齊) */
+            height: 150px; /* 控制標誌的高度 */
+            width: auto; /* 寬度自動調整，保持比例 */
+            max-width: 400px; /* 限制最大寬度，避免過大 */
+        }
+        
+        /* 調整 header h1 的樣式，讓它與 logo 更協調 */
+        header h1 {
+            margin: 0; /* 移除預設外距 */
+            font-size: 3em;
+            letter-spacing: 1px;
+            /* 根據需要調整字體大小 */
+            font-size: 3em; /* 稍微縮小標題字體，為 Logo 騰出空間 */
+        }
+
+        /* 手機版適應：標誌和標題垂直堆疊 */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column; /* 手機上改為垂直堆疊 */
+                gap: 5px; /* 調整間距 */
+            }
+            .hospital-logo {
+                height: 60px; /* 手機上標誌可以小一點 */
+                max-width: 150px;
+            }
+            header h1 {
+                font-size: 1.8em; /* 手機上標題字體更小 */
+                text-align: center;
+            }
+        }
         /* 網頁頂部標題區 */
         header {
-            background-color: #004d99; /* 奇美醫院主色調-深藍 */
-            color: white;
-            padding: 30px 0;
+            background-color: transparent; /* 🎯 修改為透明背景 */
+            color: #333;
+            padding-top: 20px;    /* 頂部內邊距 */
+            padding-bottom: 1px; /* 底部內邊距 */
             text-align: center;
-            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+            /* 注意：如果背景是透明，您可能需要調整陰影或文字顏色 */
+            /* box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); */                 
         }
         header h1 {
             margin: 0;
-            font-size: 2.8em;
-            letter-spacing: 2px;
+            font-size: 3em;
+            letter-spacing: 1px;
         }
         /* 導覽列 */
         nav {
@@ -73,7 +109,7 @@
             padding: 15px 20px;
             color: white;
             text-decoration: none;
-            font-weight: 500;
+            font-weight: 600;
             transition: background-color 0.3s;
         }
         nav ul li a:hover {
@@ -82,16 +118,16 @@
         /* 內容區塊 */
         section {
             background-color: white;
-            padding: 40px;
-            margin-top: 25px;
+            padding: 20px;
+            margin-top: 20px;
             border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
         }
         section h2 {
             color: #004d99;
             border-bottom: 3px solid #007bff;
             padding-bottom: 12px;
-            margin-bottom: 30px;
+            margin-bottom: 10px;
             font-size: 2.2em;
             font-weight: 700;
         }
@@ -122,14 +158,14 @@
         /* 設施/圖片列表佈局 */
         .facility-list {
             list-style: none;
-            padding: 0;
+            padding:5px;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
+            gap: 50px;
         }
         .facility-item {
             border: 1px solid #ccc;
-            padding: 20px;
+            padding: 5px;
             border-radius: 8px;
             background-color: #fcfcfc;
             text-align: center;
@@ -141,12 +177,12 @@
         }
         /* 圖片樣式 */
         .facility-item img {
-            width: 100%;
-            height: auto;
-            max-height: 350px; /* 限制高度，保持視覺一致 */
+            width: 80%;
+            height:80%;
+            max-height: 560px; /* 限制高度，保持視覺一致 */
             object-fit: cover; /* 確保圖片覆蓋容器 */
             border-radius: 4px;
-            margin-bottom: 15px;
+            margin-bottom: 0px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
@@ -181,7 +217,10 @@
 <body>
 
     <header>
-        <h1>佳里奇美醫院 - 宿舍簡介</h1>
+        <div class="header-content">
+            <img src="chimei.png" alt="佳里奇美醫院標誌" class="hospital-logo">
+            <h1>宿舍簡介</h1>
+        </div>
         <p>提供給同仁舒適、便利的住宿環境</p>
     </header>
 
@@ -212,7 +251,7 @@
                 <div class="facility-item">
                     <img src="地理位置圖片.png" alt="宿舍地理位置圖">
                     <h3>地理位置</h3>
-                    <p>距離醫院及主要生活機能區交通便利，例如距離市區忠孝路線里約 3.8 公里。</p>
+                    <p>離醫院及主要生活機能區交通便利，例如:離市區忠孝路約 3.8 公里。</p>
                 </div>
             </div>
         </section>
@@ -266,30 +305,31 @@
 
         <section id="room_images">
             <h2>🖼️ 房型實景照片</h2>
-            <p>以下為部分房型之實景參考照片：</p>
+            <p>以下為部分房型之實景參考照片：配置獨立衛浴、床鋪、書桌椅、衣櫃及冰箱</p>
             <div class="facility-list">
                 
                 <div class="facility-item">
                     <img src="單人房照片1.jpg" alt="單人房房內部照片">
                     <h3>單人房實景 (實景)</h3>
-                    <p>房內配置獨立衛浴、床鋪、書桌椅、衣櫃及冰箱。</p>
+                    
                 </div>
                 
                   <div class="facility-item">
                     <img src="雙人房照片1.jpg" alt="雙人房內部照片2">
                     <h3>雙人房實景 (實景)</h3>
+                    
                 </div>
                 
                 <div class="facility-item">
                     <img src="三人房照片1.jpg" alt="三人房內部照片">
                     <h3>三人房實景 (實景)</h3>
-                    <p>提供三個獨立床位，適合多人合住。</p>
+                    
                 </div>
                 
                 <div class="facility-item">
                     <img src="四人房照片1.jpg" alt="四人房內部照片">
                     <h3>四人房實景 (實景)</h3>
-                    <p>提供四個獨立床位，空間寬敞，配置齊全。</p>
+                    
                 </div>
                         </div>
             </section>
@@ -304,16 +344,16 @@
             </div>
             
             <h3>🧺 洗衣/曬衣空間 (6樓)</h3>
-            <p>位於 6 樓，設置 2 台洗衣機、1 台烘衣機、1 台脫水機：</p>
+            <p>位於 6 樓，設置 2 台洗衣機、1 台烘衣機、1 台脫水機</p>
             <ul>
-                <li>洗衣：優惠價 20 元/次 (原價 30 元)。</li>
-                <li>烘衣：10 元/次。</li>
-                <li>脫水：免費 (原價 5 元)。</li>
+                <p>收費方式 洗衣：優惠價 20 元/次 (原價 30 元)。</p>
+                <p>烘衣：10 元/次。</p>
+                <p>脫水：免費 (原價 5 元)。</p>
             </ul>
         </div>
             </div>
 
-            <div style="margin-top: 30px;">
+            <div style="margin-top: 40px;">
                 <h3>🅿️ 停車格 (地下室 B1)</h3>
                 <p>地下室提供停車位，收費標準如下：</p>
                 <ul>
@@ -327,26 +367,23 @@
             <h2>🛡️ 門禁與安全</h2>
             <div class="facility-list">
                 <div class="facility-item" style="grid-column: span 2;">
-                    <img src="[請替換成門禁系統照片的公開網址]" alt="門禁系統照片" style="height: 150px; object-fit: contain; border: 1px dashed #aaa; background-color: #f1f1f1;">
+                    <img src="門禁監視1.png" alt="門禁系統照片" style="height: 300px; object-fit: contain; border: 1px dashed #aaa; background-color: #f1f1f1;">
                     <h3>24 小時安全維護</h3>
-                    <p>宿舍配置完整的**監視設備、門禁刷卡系統**，並有**24 小時保全駐點**，嚴格控管人員進出，確保住宿安全。</p>
-                    <p>所有門禁刷卡機制均設置於各樓層主要門口，監視及門禁系統主機放置於 1F 電器機房控管。</p>
-                </div>
+                    <p>宿舍配置完整的**監視設備、門禁刷卡系統**，並有**24 小時保全駐點**。</p>
+                    <p>所有門禁刷卡機制均設置於各樓層主要門口，嚴格控管人員進出，確保住宿安全。</p>                    
+               </div>
             </div>
         </section>
         
         <section id="plans">
-            <h2>🗺️ 樓層平面圖下載</h2>
-            <p>點擊下方連結可下載各樓層平面圖 (PDF 格式)：</p>
+            <h2>🗺️ 樓層平面圖</h2>
+            <p>點擊下方連結可下載各樓層平面圖：</p>
             <div class="facility-list">
-                <div class="facility-item"><a href="[請替換成 B1F.pdf 的公開網址]" target="_blank" style="color: #004d99; font-weight: bold;">B1F 地下室平面圖 (停車場)</a></div>
-                <div class="facility-item"><a href="[請替換成 1F.pdf 的公開網址]" target="_blank" style="color: #004d99; font-weight: bold;">1F 平面圖</a></div>
-                <div class="facility-item"><a href="[請替換成 2F.pdf 的公開網址]" target="_blank" style="color: #004d99; font-weight: bold;">2F 平面圖 (交誼廳、設施區)</a></div>
-                <div class="facility-item"><a href="[請替換成 3F.pdf 的公開網址]" target="_blank" style="color: #004d99; font-weight: bold;">3F 樓層平面圖</a></div>
-                <div class="facility-item"><a href="[請替換成 4F.pdf 的公開網址]" target="_blank" style="color: #004d99; font-weight: bold;">4F 樓層平面圖</a></div>
-                <div class="facility-item"><a href="[請替換成 5F.pdf 的公開網址]" target="_blank" style="color: #004d99; font-weight: bold;">5F 樓層平面圖</a></div>
-                <div class="facility-item"><a href="[請替換成 6F.pdf 的公開網址]" target="_blank" style="color: #004d99; font-weight: bold;">6F 屋頂平台/洗衣區</a></div>
-            </div>
+                <div class="facility-item"><a href="B1.jpg" target="_blank" style="color: #004d99; font-weight: bold;">B1F 地下室平面圖 (停車場)</a></div>
+                <div class="facility-item"><a href="3F.JPG" target="_blank" style="color: #004d99; font-weight: bold;">3F 樓層平面圖</a></div>
+                <div class="facility-item"><a href="4F.jpg" target="_blank" style="color: #004d99; font-weight: bold;">4F 樓層平面圖</a></div>
+                <div class="facility-item"><a href="5F.jpg" target="_blank" style="color: #004d99; font-weight: bold;">5F 樓層平面圖</a></div>
+           </div>
         </section>
 
     </div>
